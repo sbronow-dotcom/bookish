@@ -211,8 +211,10 @@ with st.sidebar:
     st.markdown("---")
     st.subheader("Ask Bookish Settings")
     st.info("✨ Ask Bookish is powered by Gemini AI. To use it, you'll need a free Gemini API key — a password that connects the app to Google's AI. Get yours at [aistudio.google.com](https://aistudio.google.com) and paste it below.", icon=None)
-    api_key = st.text_input("Gemini API key", type="password",
-                            help="Required for AI-powered personalization. Never stored.")
+    api_key = st.text_input("Gemini API key (optional)", type="password",
+                            help="Optional — the app has a built-in key. Enter your own to use a personal quota.")
+    if not api_key:
+        api_key = st.secrets.get("GEMINI_API_KEY", "")
     st.caption("*Never share your API key with anyone or paste it into a site you don't trust. Bookish only uses it for this session and never stores it.*")
     st.markdown("---")
     st.caption("Built & designed by Sammi 🌸")
