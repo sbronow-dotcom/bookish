@@ -246,7 +246,7 @@ with tab1:
 # ── Tab 2: LLM Personalization ────────────────────────────────────────────────
 with tab2:
     st.markdown("<h1 style='font-size:2rem; margin-bottom:0;'>Tell Us What You're Looking For</h1>", unsafe_allow_html=True)
-    st.caption(f"Personalizing recommendations for **Reader #{user_id}** · Switch readers in the sidebar.")
+    st.caption(f"✨ Personalizing recommendations for **Reader #{user_id}** with Gemini AI · Switch readers in the sidebar.")
     st.markdown("<p style='font-size:1rem; color:var(--color-text-secondary); margin-top:8px;'>Describe your mood, a book you loved, or what you're looking for today — Bookish will re-rank your recommendations accordingly.</p>", unsafe_allow_html=True)
 
     st.markdown("""
