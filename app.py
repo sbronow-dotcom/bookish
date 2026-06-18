@@ -209,15 +209,9 @@ with st.sidebar:
     st.markdown("---")
     top_n = st.slider("Number of recommendations to show", min_value=3, max_value=20, value=5)
     st.markdown("---")
-    st.subheader("Ask Bookish Settings")
-    st.info("✨ Ask Bookish is powered by Gemini AI. To use it, you'll need a free Gemini API key — a password that connects the app to Google's AI. Get yours at [aistudio.google.com](https://aistudio.google.com) and paste it below.", icon=None)
-    api_key = st.text_input("Gemini API key (optional)", type="password",
-                            help="Optional — the app has a built-in key. Enter your own to use a personal quota.")
-    if not api_key:
-        api_key = st.secrets.get("GEMINI_API_KEY", "")
-    st.caption("*Never share your API key with anyone or paste it into a site you don't trust. Bookish only uses it for this session and never stores it.*")
-    st.markdown("---")
     st.caption("Built & designed by Sammi 🌸")
+
+api_key = st.secrets.get("GEMINI_API_KEY", "")
 
 # ── Pre-fetch CF recs ─────────────────────────────────────────────────────────
 with st.spinner("Loading recommendations..."):
@@ -291,10 +285,9 @@ with tab2:
         st.caption("⚠️ *Not for the faint of heart.*")
 
     rerank_btn = st.button("✨ Find My Next Read",
-                           disabled=(not api_key or not preference),
+                           disabled=(not preference),
                            use_container_width=True)
-    if preference and not api_key:
-        st.warning("Add your Gemini API key in the sidebar to find your next read.", icon="🔑")
+    st.caption("✨ Powered by Gemini AI")
 
     if rerank_btn:
         spinner_msg = {"normal": "Finding your perfect books...", "surprise": "Finding your hidden gem...", "roast": "Preparing your roast..."}[mode]
