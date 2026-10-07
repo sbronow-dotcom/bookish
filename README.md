@@ -82,7 +82,7 @@ The app has three modes. Each mode uses its own system instruction and temperatu
 | Prompt | Ranking fit | Explanation quality | Total tokens |
 |---|---|---|---|
 | A — baseline | 52.5% | 92.5% | 43.8K |
-| **B — designed (shipped)** | **70.0%** | **100%** | 76.2K |
+| **B — designed (winner - would ship this one)** | **70.0%** | **100%** | 76.2K |
 | B v2 (temp 0.3) | 60.0% | 100% | 76.9K |
 | B v3 (non-fiction constraint) | 65.0% | 100% | 75.7K |
 
