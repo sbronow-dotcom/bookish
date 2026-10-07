@@ -92,8 +92,6 @@ The app has three modes. Each mode uses its own system instruction and temperatu
 
 **Limitations:** n=20. The judges aren't calibrated against human labels. Only two kinds of requests were tested. Judge position and length bias weren't measured. Full results and judge prompts: [evaluation_results.pdf](docs/evaluation_results.pdf).
 
----
-
 ## What I'd do next
 
 1. **Evaluate the LLM layer against what readers actually liked.** Measure NDCG@K on held-out ratings after re-ranking, not only judge scores.
@@ -102,22 +100,6 @@ The app has three modes. Each mode uses its own system instruction and temperatu
 4. **Widen retrieval** (larger k, embedding-based candidates) to get past the ranking-fit ceiling.
 5. **Online test.** A/B the re-ranker against CF-only order on add-to-shelf rate per session.
 
----
-
-## How this transfers to registry recommendations
-
-The same architecture fits product discovery, such as baby-registry recommendations:
-
-| Bookish | Registry recommendations |
-|---|---|
-| Item–item CF over ratings | "Add next" from item co-occurrence across completed registries |
-| LLM re-ranks by typed intent | An AI registry assistant grounded in the site's own candidates |
-| Candidate-only, schema-enforced output | Recommend only real, purchasable products |
-| "Because you liked X" explanations | Builds trust when real people will buy the gifts |
-| Readers with no history | A new parent on day one: needs a cold-start path |
-| A strong popularity baseline | Start with a simple rule, and add a model when it beats the rule |
-
----
 
 ## What's in this repo
 
